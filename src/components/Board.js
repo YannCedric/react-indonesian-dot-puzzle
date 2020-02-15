@@ -13,12 +13,16 @@ const BoardStyle = styled.div`
     justify-items: stretch;
 ` 
 
-function Board({size=4,boardString=""}) {
-  const cards = [...boardString].map( (token,i) => <Case token={token} index={i}/>)
+function Board({board=[]}) {
+  const cases = board.map((row, x) => {
+    return row.map((token, y) => {
+      return <Case key={x+""+y} token={token} x={x} y={y}/>
+    })
+  })
 
   return (
-    <BoardStyle size={size} >
-      {cards}
+    <BoardStyle size={board.length} >
+      {cases.flat()}
     </BoardStyle>
   );
 }
