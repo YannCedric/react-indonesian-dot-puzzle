@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useReducer} from "react";
 import styled from "styled-components"
+import { reducer } from "../redux/reducer";
 
 const colorA = 'grey';
 const colorB = 'lightgrey';
@@ -18,10 +19,13 @@ const CaseStyle = styled.div`
     }
 ` 
 
-function Case({ token, index }) {
-  const isOn = Number(token) === 1;
+function Case({ token, x, y}) {
+  const [, dispatch] = useReducer(reducer)
 
-  return <CaseStyle isOn={isOn}/>;
+  const onClick = () => {
+    dispatch({type: "FLIP_CASE", payload: {x,y}})
+  }
+  return <CaseStyle onClick={onClick}  isOn={token === 1}/>;
 }
 
 export default Case;

@@ -18,9 +18,8 @@ export function reducer(state = DEFAULT_STATE, action) {
             board: board2d,
         }
     case "FLIP_CASE":
-      let { token, index } = action.payload;
-      let x = index % state.n;
-      let y = Math.floor(index / state.n);
+      let { x, y } = action.payload;
+      const token = state.board[x][y]
       state.board[x][y] = Number(token) === 1 ? 0 : 1;
       return {
         ...state,
