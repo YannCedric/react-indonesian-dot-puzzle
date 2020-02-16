@@ -2,13 +2,13 @@ import React from 'react';
 import styled from "styled-components"
 import Case from './Case';
 
+const caseSize = "100px";
 
 const BoardStyle = styled.div`
-    width: 500px;
-    height: 500px;
     display: grid;
     grid-gap: 2px;
-    grid-template-columns: repeat(${props => props.size}, 1fr);
+    grid-template-columns: repeat(${props => props.size}, ${caseSize});
+    grid-template-rows: repeat(${props => props.size}, ${caseSize});
     align-items: stretch;
     justify-items: stretch;
 ` 
