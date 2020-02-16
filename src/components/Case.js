@@ -27,7 +27,7 @@ function Case({ token, x, y }) {
   return (
     <CaseStyle
       onClick={() => {
-        dispatch({ type: "FLIP_CASE", payload: { x, y } });
+        dispatch({ type: "PLAY", payload: { x, y } });
       }}
       isOn={token === 1}
     />
