@@ -1,5 +1,9 @@
 # Indonesian Dot Puzzle 
 
+Demo:
+
+![img](/puzzle.gif)
+
 Uses: 
 * React hooks
 * Redux
