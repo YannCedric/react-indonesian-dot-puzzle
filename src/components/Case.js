@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { BoardContext } from "../AppContext";
 
-const colorA = "grey";
+const colorA = "#5C6AC4";
 const colorB = "lightgrey";
 const getMyColor = props => (props.isOn ? colorA : colorB);
 
@@ -17,8 +17,10 @@ const CaseStyle = styled.div`
   :active {
     transition-duration: 0.1s;
     box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.4);
-    transform: translateY(1px);
   }
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(${props => props.isOn ? 180:0}deg);
 `;
 
 function Case({ token, x, y }) {

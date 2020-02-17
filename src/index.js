@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BoardContextProvider } from './AppContext';
+import '@shopify/polaris/styles.css';
 
 ReactDOM.render((
     <BoardContextProvider>
